@@ -1,5 +1,6 @@
 package ru.javarush.info.fatfaggy.animals;
 
+import configs.MyConfig;
 import entities.Cat;
 import entities.Dog;
 import entities.Parrot;
@@ -8,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext("entities");
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyConfig.class);
         Cat cat = applicationContext.getBean(Cat.class);
         Dog dog = (Dog) applicationContext.getBean("dog");
         Parrot parrot = applicationContext.getBean("parrot - Kesha", Parrot.class);
